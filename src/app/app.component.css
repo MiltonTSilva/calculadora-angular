@@ -9,7 +9,7 @@ body {
   max-width: 300px;
   height: 500px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -17,6 +17,23 @@ body {
 .item {
   background-color: #ccc;
   border: 2px solid blue;
-  height: 60px;
-  width: 60px;
+  cursor: pointer;
+  height: 65px;
+  width: 65px;
+}
+
+input {
+  width: 283px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  font-size: large;
+  font-family: sans-serif;
+  text-align: right;
+}
+
+h2,
+h5 {
+  height: 2px;
+  color: darkslategray;
 }
