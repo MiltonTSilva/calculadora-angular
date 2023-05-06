@@ -2,27 +2,39 @@
 <div class="container">
   <h2>Calculadora</h2>
   <h5>Feita com Angular e TypeScript</h5>
-  <input type="number" />
-  <button class="item" id="item-percente">%</button>
-  <button class="item" id="item-clear">C</button>
-  <button class="item" id="item-back"><=</button>
-  <button class="item" id="item-division">/</button>
-  <button class="item" id="item-seven">7</button>
-  <button class="item" id="item-eight">8</button>
-  <button class="item" id="item-nine">9</button>
-  <button class="item" id="item-multiply">X</button>
-  <button class="item" id="item-for">4</button>
-  <button class="item" id="item-five">5</button>
-  <button class="item" id="item-six">6</button>
-  <button class="item" id="item-subtract">-</button>
-  <button class="item" id="item-one">1</button>
-  <button class="item" id="item-two">2</button>
-  <button class="item" id="item-three">3</button>
-  <button class="item" id="item-four">+</button>
-  <button class="item" id="item-empty"></button>
-  <button class="item" id="item-zero">0</button>
-  <button class="item" id="item-comma">,</button>
-  <button class="item" id="item-equal">=</button>
+  <form>
+    <input type="text" [(ngModel)]="valor" name="valor" />
+    <input
+      type="text"
+      disabled="disabled"
+      [ngStyle]="{ 'background-color': 'red' }"
+      [(ngModel)]="total"
+      name="total"
+    />
+  </form>
+
+  <!-- <button (click)="operacao('%')" class="item" id="item-percente">%</button> -->
+
+  <!-- <button (click)="calcular('<==')" class="item" id="item-back"><==</button> -->
+
+  <button (click)="numero(7)" class="item" id="item-seven">7</button>
+  <button (click)="numero(8)" class="item" id="item-eight">8</button>
+  <button (click)="numero(9)" class="item" id="item-nine">9</button>
+  <button (click)="operacao('X')" class="item" id="item-multiply">X</button>
+  <button (click)="numero(4)" class="item" id="item-for">4</button>
+  <button (click)="numero(5)" class="item" id="item-five">5</button>
+  <button (click)="numero(6)" class="item" id="item-six">6</button>
+  <button (click)="operacao('-')" class="item" id="item-subtract">-</button>
+  <button (click)="numero(1)" class="item" id="item-one">1</button>
+  <button (click)="numero(2)" class="item" id="item-two">2</button>
+  <button (click)="numero(3)" class="item" id="item-three">3</button>
+  <button (click)="operacao('+')" class="item" id="item-four">+</button>
+  <button (click)="numero(0)" class="item" id="item-zero">0</button>
+  <button (click)="limpar('C')" class="item" id="item-clear">C</button>
+  <button (click)="operacao('/')" class="item" id="item-division">÷</button>
+  <!-- <button (click)="calcular('.')" class="item" id="item-ponto">.</button>
+  <button (click)="calcular(',')" class="item" id="item-comma">,</button> -->
+  <button (click)="resultado('=')" class="item" id="item-equal">=</button>
 </div>
 
 <h4>Programado por:</h4>
