@@ -10,9 +10,10 @@ export class AppComponent {
 
   valor: string = '';
   operador: string = '';
+  pontuacao: string = '';
   valor1: string = '';
   valor2: string = '';
-  total: number = 0;
+  total: string = '';
 
   numero(value: number) {
     if (
@@ -22,55 +23,73 @@ export class AppComponent {
       this.operador == '/'
     ) {
       this.valor2 += value;
-
-      console.log('Valor:' + this.valor);
-      console.log('Valor 2:' + this.valor2);
+      this.valor = this.valor1 + this.operador + this.valor2;
     } else {
       this.valor1 += value;
+      this.valor = this.valor1 + this.operador;
+    }
+  }
 
-      console.log('Valor 1:' + this.valor1);
+  operacao(value: string) {
+    this.operador = value;
+    if (this.valor2 == '') {
+      this.valor = this.valor1 + this.operador;
+    }
+  }
+  setPontuacao(value: string) {
+    this.pontuacao = value;
+    if (this.valor2 == '') {
+      this.valor1 += this.pontuacao;
+    } else {
+      this.valor2 += this.pontuacao;
     }
 
     this.valor = this.valor1 + this.operador + this.valor2;
   }
 
-  operacao(value: string) {
-    this.operador = value;
-    this.valor = this.valor1 + this.operador;
-    console.log(value);
-  }
-
   resultado(value: string) {
     if (value == '=') {
       let soma: number = 0;
+
+      this.valor1 = this.formatarValor(this.valor1).toString();
+      this.valor2 = this.formatarValor(this.valor2).toString();
+
       if (this.operador == '+') {
-        this.valor = this.valor1 + '+' + this.valor2;
         soma = parseFloat(this.valor1) + parseFloat(this.valor2);
       } else if (this.operador == '-') {
-        this.valor = this.valor1 + '-' + this.valor2;
         soma = parseFloat(this.valor1) - parseFloat(this.valor2);
       } else if (this.operador == 'X') {
-        this.valor = this.valor1 + 'X' + this.valor2;
         soma = parseFloat(this.valor1) * parseFloat(this.valor2);
       } else if (this.operador == '/') {
-        this.valor = this.valor1 + '/' + this.valor2;
         soma = parseFloat(this.valor1) / parseFloat(this.valor2);
       }
 
-      this.total = soma;
+      this.total = this.formataDinheiro(soma.toFixed(2).toString());
+
       this.valor1 = this.total.toString();
       this.valor2 = '';
-
-      console.log('Resultdo:' + this.total.toString());
     }
+  }
+
+  formatarValor(value: string) {
+    value = value.replace('.', '');
+    value = value.replace(',', '.');
+    return parseFloat(value);
+  }
+  formataDinheiro(n: string) {
+    return (
+      //'R$ ' +
+      n.replace('.', ',').replace(/(\d)(?=(\d{3})+\,)/g, '$1.')
+    );
   }
 
   limpar(value: string) {
     this.valor = '';
+    this.pontuacao = '';
     this.operador = '';
     this.valor1 = '';
     this.valor2 = '';
-    this.total = 0;
+    this.total = '';
     console.clear();
   }
 }
