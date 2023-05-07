@@ -3,13 +3,20 @@
   <h2>Calculadora</h2>
   <h5>Feita com Angular e TypeScript</h5>
   <form>
-    <input type="text" [(ngModel)]="valor" name="valor" />
+    <input
+      type="text"
+      [(ngModel)]="valor"
+      name="valor"
+      id="valor"
+      placeholder="Cálculo"
+    />
     <input
       type="text"
       disabled="disabled"
-      [ngStyle]="{ 'background-color': 'red' }"
+      placeholder="Resultado"
       [(ngModel)]="total"
       name="total"
+      id="total"
     />
   </form>
 

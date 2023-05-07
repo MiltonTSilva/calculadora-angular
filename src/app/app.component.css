@@ -22,10 +22,20 @@ body {
   width: 65px;
 }
 
-input {
+#valor {
   width: 283px;
   height: 40px;
-  background-color: black;
+  background-color: yellow;
+  color: red;
+  font-size: large;
+  font-family: sans-serif;
+  text-align: right;
+}
+
+#total {
+  width: 283px;
+  height: 40px;
+  background-color: red;
   color: white;
   font-size: large;
   font-family: sans-serif;
