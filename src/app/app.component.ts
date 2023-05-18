@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'calculadora';
+  placeholder = '0';
 
   valor: string = '';
   operador: string = '';

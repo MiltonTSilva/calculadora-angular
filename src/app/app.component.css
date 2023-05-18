@@ -28,8 +28,8 @@ body {
 #valor {
   width: 283px;
   height: 40px;
-  background-color: yellow;
-  color: red;
+  background-color: #b8b8ae;
+  color: #000000;
   font-size: large;
   font-family: sans-serif;
   text-align: right;
@@ -39,8 +39,8 @@ body {
 #total {
   width: 283px;
   height: 40px;
-  background-color: red;
-  color: white;
+  background-color: #b8b8ae;
+  color: #000000;
   font-size: large;
   font-family: sans-serif;
   text-align: right;
@@ -55,4 +55,12 @@ h5 {
 
 form {
   margin-bottom: 5px;
+}
+
+input,
+#valor,
+#total {
+  border: none;
+  margin: 0px 4px;
+  width: 288px;
 }

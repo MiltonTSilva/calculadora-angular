@@ -8,24 +8,23 @@
       [(ngModel)]="valor"
       name="valor"
       id="valor"
-      placeholder="Cálculo"
+      [placeholder]="placeholder"
     />
     <input
       type="text"
       disabled="disabled"
-      placeholder="Resultado"
+      [placeholder]="placeholder"
       [(ngModel)]="total"
       name="total"
       id="total"
     />
   </form>
-
   <!-- <button (click)="operacao('%')" class="item" id="item-percente">%</button> -->
 
   <!-- <button (click)="calcular('<==')" class="item" id="item-back"><==</button> -->
-  <button (click)="limpar('C')" class="item" id="item-clear">C</button>
-  <button (click)="limpar('CE')" class="item" id="item-clear">CE</button>
-  <button (click)="limpar('DEL')" class="item" id="item-clear">DEL</button>
+  <button (click)="limpar('C')" class="item" id="item-clear-c">C</button>
+  <button (click)="limpar('CE')" class="item" id="item-clear-ce">CE</button>
+  <button (click)="limpar('DEL')" class="item" id="item-clear-del">DEL</button>
   <button (click)="operacao('/')" class="item" id="item-division">÷</button>
   <button (click)="numero(7)" class="item" id="item-seven">7</button>
   <button (click)="numero(8)" class="item" id="item-eight">8</button>
