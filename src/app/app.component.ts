@@ -23,11 +23,18 @@ export class AppComponent {
       this.operador == '/'
     ) {
       this.valor2 += value;
-      this.valor = this.valor1 + this.operador + this.valor2;
+      if (this.valor.includes(this.operador)) {
+        this.valor = this.valor + this.valor2;
+      } else {
+        this.valor = this.valor1 + this.operador + this.valor2;
+      }
     } else {
       this.valor1 += value;
+      console.log(value);
+
       this.valor = this.valor1 + this.operador;
     }
+    //console.log(this.valor1);
   }
 
   operacao(value: string) {
@@ -84,12 +91,24 @@ export class AppComponent {
   }
 
   limpar(value: string) {
-    this.valor = '';
-    this.pontuacao = '';
-    this.operador = '';
-    this.valor1 = '';
-    this.valor2 = '';
-    this.total = '';
-    console.clear();
+    if (value == 'C') {
+      this.valor = '';
+      this.pontuacao = '';
+      this.operador = '';
+      this.valor1 = '';
+      this.valor2 = '';
+      this.total = '';
+    } else if (value == 'CE') {
+      this.valor2 = '';
+      console.log(this.valor);
+      this.valor = this.valor1.substring(0, this.valor.length - 2);
+      this.valor = this.valor + this.operador;
+      this.valor1 = this.valor;
+      //console.log(this.valor1);
+    } else if (value == 'DEL') {
+      this.valor = this.valor1.substring(0, this.valor1.length - 1);
+      this.valor1 = this.valor;
+      //console.log(this.valor1);
+    }
   }
 }

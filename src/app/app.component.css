@@ -7,7 +7,7 @@ body {
   border: 2px solid red;
   padding: 15px;
   max-width: 300px;
-  height: 500px;
+  height: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -17,9 +17,12 @@ body {
 .item {
   background-color: #ccc;
   border: 2px solid blue;
+  margin: 2px;
   cursor: pointer;
   height: 65px;
   width: 65px;
+  font-weight: bold;
+  font-size: 1em;
 }
 
 #valor {
@@ -30,6 +33,7 @@ body {
   font-size: large;
   font-family: sans-serif;
   text-align: right;
+  margin: 2px;
 }
 
 #total {
@@ -40,10 +44,15 @@ body {
   font-size: large;
   font-family: sans-serif;
   text-align: right;
+  margin: 2px;
 }
 
 h2,
 h5 {
   height: 2px;
   color: darkslategray;
+}
+
+form {
+  margin-bottom: 5px;
 }
