@@ -22,9 +22,27 @@ body {
   height: 65px;
   width: 65px;
   font-weight: bold;
+  font-size: 1.5em;
+}
+#item-point {
+  background-color: #ccc;
+  border: 2px solid blue;
+  margin: 2px;
+  height: 65px;
+  width: 65px;
+  font-weight: bold;
   font-size: 1em;
 }
-
+#item-equal {
+  background-color: #ccc;
+  border: 2px solid blue;
+  margin: 2px;
+  cursor: pointer;
+  height: 65px;
+  width: 65px;
+  font-weight: bold;
+  font-size: 1em;
+}
 #valor {
   width: 283px;
   height: 40px;
@@ -63,4 +81,6 @@ input,
   border: none;
   margin: 0px 4px;
   width: 288px;
+  font-weight: bold;
+  font-size: 1.5em;
 }

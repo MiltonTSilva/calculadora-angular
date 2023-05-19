@@ -39,10 +39,14 @@
   <button (click)="numero(3)" class="item" id="item-three">3</button>
   <button (click)="operacao('+')" class="item" id="item-four">+</button>
   <button (click)="numero(0)" class="item" id="item-zero">0</button>
-
-  <button (click)="setPontuacao('.')" class="item" id="item-ponto">.</button>
   <button (click)="setPontuacao(',')" class="item" id="item-comma">,</button>
-  <button (click)="resultado('=')" class="item" id="item-equal">=</button>
+  <button
+    (click)="setPontuacao('.')"
+    id="item-point"
+    disabled="disabled"
+  ></button>
+
+  <button (click)="resultado('=')" id="item-equal">=</button>
 </div>
 
 <h4>Programado por:</h4>
